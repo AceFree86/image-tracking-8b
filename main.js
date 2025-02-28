@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
         errorDisplay.style.color = "blue";
         errorDisplay.style.fontSize = "20px";
       }
-      //console.log(`Model ${Math.round((xhr.loaded / xhr.total) * 100)}% loaded`);
+      console.log(`Model ${Math.round((xhr.loaded / xhr.total) * 100)}% loaded`);
     },
     (error) => {
       if (errorDisplay) {
