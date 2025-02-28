@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const mindarThree = new MindARThree({
     container: document.querySelector("#container"),
     imageTargetSrc:
-      "https://acefree86.github.io/image-tracking-angel/assets/Image/targets.mind",
+      "https://acefree86.github.io/image-tracking-8b/assets/Image/targets.mind",
     filterMinCF: 0.1, // Reduce jittering (default is 0.001)
     filterBeta: 10, // Reduce delay (default is 1000)
     warmupTolerance: 1, // Faster target detection (default is 5)
@@ -38,10 +38,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const groupM = new THREE.Group();
   let mixer; // Animation Mixer
-
-  // Get the anchor index from the URL query parameter (default to 0 if not provided)
-  const urlParams = new URLSearchParams(window.location.search);
-  const anchorIndex = parseInt(urlParams.get("index")) || 0;
 
   // Load the GLTF model
   const url =
