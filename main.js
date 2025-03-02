@@ -94,6 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
       renderer.render(scene, camera);
     });
     isRunning = true;
+    startButton.style.display = "block";
     startButton.textContent = "Стоп";
     errorDisplay.style.display = "none";
   };
@@ -103,6 +104,7 @@ document.addEventListener("DOMContentLoaded", () => {
     mindarThree.stop();
     renderer.setAnimationLoop(null);
     isRunning = false;
+    startButton.style.display = "block";
     startButton.textContent = "Старт";
   };
 
