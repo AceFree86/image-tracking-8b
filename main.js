@@ -22,7 +22,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Initially, show only the animation box
   startButton.style.display = "none";
-  startButton.textContent = "";
 
   // Lighting
   const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
