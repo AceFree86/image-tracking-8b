@@ -22,8 +22,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Initially, show only the animation box
   startButton.style.display = "none";
-  startButton.textContent = ""; 
-  
+  startButton.textContent = "";
+
   // Lighting
   const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
   scene.add(ambientLight);
@@ -69,7 +69,9 @@ document.addEventListener("DOMContentLoaded", () => {
         errorDisplay.style.color = "blue";
         errorDisplay.style.fontSize = "20px";
       }
-      console.log(`Model ${Math.round((xhr.loaded / xhr.total) * 100)}% loaded`);
+      console.log(
+        `Model ${Math.round((xhr.loaded / xhr.total) * 100)}% loaded`
+      );
     },
     (error) => {
       if (errorDisplay) {
@@ -112,14 +114,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Toggle AR on Button Click
   startButton.addEventListener("click", () => {
-    if (startButton) {
       if (isRunning) {
         stop();
       } else {
         start();
       }
-    } else {
-      console.error("startButton button not found!");
-    }
   });
 });
