@@ -38,6 +38,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const groupM = new THREE.Group();
   let mixer; // Animation Mixer
 
+  // Get the anchor index from the URL query parameter (default to 0 if not provided)
+  const urlParams = new URLSearchParams(window.location.search);
+  const anchorIndex = parseInt(urlParams.get("index")) || 0;
+
   // Load the GLTF model
   const url =
     "https://acefree86.github.io/image-tracking-8b/assets/models/Dants.glb";
@@ -49,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const model = gltf.scene;
       model.position.set(0, 0, 0);
       model.rotation.set(0, 0, 0); // Reset rotation
-      model.scale.set(0.5, 0.5, 0.5);
+      model.scale.set(0.4, 0.4, 0.4);
       groupM.add(model);
 
       // Initialize Animation Mixer
@@ -81,7 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   );
 
-  const anchor = mindarThree.addAnchor(0);
+  const anchor = mindarThree.addAnchor(anchorIndex);
   anchor.group.add(groupM);
 
   // Start AR
@@ -113,10 +117,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Toggle AR on Button Click
   startButton.addEventListener("click", () => {
-      if (isRunning) {
-        stop();
-      } else {
-        start();
-      }
+    if (isRunning) {
+      stop();
+    } else {
+      start();
+    }
   });
 });
